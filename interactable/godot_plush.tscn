@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf4lh3q8ev0sy"]
+
+[ext_resource type="Script" uid="uid://c0dr0qoshcgmr" path="res://interactable/interactable.gd" id="1_4sm01"]
+[ext_resource type="PackedScene" uid="uid://ryndqbcpyunj" path="res://assets/godot_plush_sitted.tscn" id="2_jx85v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jx85v"]
+
+[node name="GodotPlush" type="RigidBody3D"]
+script = ExtResource("1_4sm01")
+metadata/_custom_type_script = "uid://c0dr0qoshcgmr"
+
+[node name="godot_plush_sitted" parent="." instance=ExtResource("2_jx85v")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_jx85v")

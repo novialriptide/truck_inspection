@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://djrdb47lfyajg"]
+[gd_scene load_steps=4 format=3 uid="uid://djrdb47lfyajg"]
 
 [ext_resource type="PackedScene" uid="uid://brlqo2lplhnli" path="res://entity/player/player.tscn" id="1_yonux"]
 [ext_resource type="PackedScene" uid="uid://vaxnsln12fn7" path="res://interactable/interactable.tscn" id="2_hc8e3"]
+[ext_resource type="PackedScene" uid="uid://cf4lh3q8ev0sy" path="res://interactable/godot_plush.tscn" id="3_53lbt"]
 
 [node name="Inspection" type="Node3D"]
 
@@ -17,8 +18,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.16593, 0)
 use_collision = true
 size = Vector3(100, 1, 100)
 
-[node name="Interactable2" parent="." instance=ExtResource("2_hc8e3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.43586, -6.54524)
-
 [node name="Interactable" parent="." instance=ExtResource("2_hc8e3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.71793, -3.27262)
+
+[node name="GodotPlush" parent="." instance=ExtResource("3_53lbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.03203, -6.78076)

@@ -30,7 +30,7 @@ func _unhandled_input(event):
 		headX.rotate_x(-event.relative.y * camera_sensitivity)
 		
 		# Prevent the player from doing cartwheels on the camera.
-		headX.rotation.x = clamp(headX.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		headX.rotation.x = clamp(headX.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 func _physics_process(delta):
 	var is_running = Input.is_action_pressed("move_run")
