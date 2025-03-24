@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://djrdb47lfyajg"]
+[gd_scene load_steps=6 format=3 uid="uid://djrdb47lfyajg"]
 
 [ext_resource type="Script" uid="uid://c4v3miudfa5i2" path="res://scene/inspection.gd" id="1_cdtd0"]
 [ext_resource type="PackedScene" uid="uid://brlqo2lplhnli" path="res://entity/player/player.tscn" id="1_yonux"]
-[ext_resource type="PackedScene" uid="uid://e1tdvf81ywu4" path="res://pickable_item/godot_plush.tscn" id="3_xsvmx"]
+[ext_resource type="PackedScene" uid="uid://e1tdvf81ywu4" path="res://pickable_item/sit_godot_plush.tscn" id="3_xsvmx"]
 [ext_resource type="Script" uid="uid://dsua8gsvmy01u" path="res://entity/inspectable_truck/inspectable_truck.gd" id="4_xsvmx"]
+[ext_resource type="PackedScene" uid="uid://bikflw4f6xi3k" path="res://pickable_item/godot_plush.tscn" id="5_cdtd0"]
 
 [node name="Inspection" type="Node3D"]
 script = ExtResource("1_cdtd0")
@@ -20,6 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.16593, 0)
 use_collision = true
 size = Vector3(100, 1, 100)
 
-[node name="InspectableTruck" type="Node" parent="."]
+[node name="InspectableTruck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.04868, -3.7116)
 script = ExtResource("4_xsvmx")
-potential_items = Array[PackedScene]([ExtResource("3_xsvmx")])
+potential_items = Array[PackedScene]([ExtResource("3_xsvmx"), ExtResource("5_cdtd0")])

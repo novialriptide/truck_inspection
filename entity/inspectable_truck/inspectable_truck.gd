@@ -4,6 +4,9 @@ class_name InspectableTruck extends Node
 @export var manifest: Manifest;
 @export var potential_items: Array[PackedScene];
 
+var radius = 40;
+var item_count = 1000;
+
 func spawn_random_item() -> PickableItem:
 	if potential_items.is_empty():
 		push_error("potential_items is empty.")
@@ -17,9 +20,16 @@ func spawn_random_item() -> PickableItem:
 		return null
 
 	add_child(item_instance)
+	item_instance.position = Vector3(
+		randf_range(-radius, radius),  # Random X (-10 to 10)
+		randf_range(0.0, 0.0),     # Random Y (0 to 5)
+		randf_range(-radius, radius)   # Random Z (-10 to 10)
+	)
+
 	return item_instance
 
 func _ready() -> void:
 	license_plate = IdentificationGenerators.new_license_plate()
 	manifest = Manifest.new()
-	spawn_random_item()
+	for i in range(item_count):
+		spawn_random_item()
