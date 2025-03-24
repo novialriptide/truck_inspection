@@ -21,9 +21,9 @@ func spawn_random_item() -> PickableItem:
 
 	add_child(item_instance)
 	item_instance.position = Vector3(
-		randf_range(-radius, radius),  # Random X (-10 to 10)
-		randf_range(0.0, 0.0),     # Random Y (0 to 5)
-		randf_range(-radius, radius)   # Random Z (-10 to 10)
+		randf_range(-radius, radius),
+		randf_range(0.0, 0.0),
+		randf_range(-radius, radius)
 	)
 
 	return item_instance
