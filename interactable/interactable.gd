@@ -1,4 +1,10 @@
-extends RigidBody3D
-class_name Interactable
+class_name Interactable extends RigidBody3D
 
-@export var prompt = "Press E to interact"
+var prompt: String;
+
+func _init():
+	prompt = "Press E to interact"
+
+# Overridable
+func on_interact(player: Player) -> void:
+	pass

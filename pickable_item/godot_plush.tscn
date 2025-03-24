@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://e1tdvf81ywu4"]
+
+[ext_resource type="Script" uid="uid://dokyugv13dned" path="res://pickable_item/pickable_item.gd" id="1_u8642"]
+[ext_resource type="PackedScene" uid="uid://ryndqbcpyunj" path="res://assets/godot_plush_sitted.tscn" id="2_u8642"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5358i"]
+radius = 0.477203
+
+[node name="GodotPlush" type="RigidBody3D"]
+script = ExtResource("1_u8642")
+metadata/_custom_type_script = "uid://dokyugv13dned"
+
+[node name="godot_plush_sitted" parent="." instance=ExtResource("2_u8642")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.357711, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5358i")

@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export var walking_speed = 6
 @export var running_speed = 10
@@ -7,7 +7,7 @@ extends CharacterBody3D
 
 @export var camera_sensitivity = 0.002
 
-@export var is_looking_at_interactable = false
+@export var inventory: Array[PickableItem] = []
 
 @onready var headY = $CameraPivotY
 @onready var headX = $CameraPivotY/CameraPivotX
@@ -19,7 +19,7 @@ func on_interact_look_at(interactable: Interactable):
 	prompt_label.set_text(interactable.prompt)
 
 func on_interact(interactable: Interactable):
-	print(interactable)
+	interactable.on_interact(self)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -35,7 +35,7 @@ func _unhandled_input(event):
 func _physics_process(delta):
 	var is_running = Input.is_action_pressed("move_run")
 	var interactable = raycast.get_collider() as Interactable
-	is_looking_at_interactable = interactable != null
+	var is_looking_at_interactable = interactable != null
 	var wants_to_interact = Input.is_action_just_pressed("interact_select") and is_looking_at_interactable
 
 	var input_movement = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
