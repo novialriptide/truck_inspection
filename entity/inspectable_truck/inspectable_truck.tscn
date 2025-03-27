@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://8lql5vf581nk"]
+
+[ext_resource type="Script" uid="uid://dsua8gsvmy01u" path="res://entity/inspectable_truck/inspectable_truck.gd" id="1_mbut5"]
+[ext_resource type="PackedScene" uid="uid://e1tdvf81ywu4" path="res://pickable_item/sit_godot_plush.tscn" id="2_u0d0w"]
+[ext_resource type="PackedScene" uid="uid://bikflw4f6xi3k" path="res://pickable_item/godot_plush.tscn" id="3_djs5a"]
+
+[node name="InspectableTruck" type="Node3D"]
+script = ExtResource("1_mbut5")
+potential_items = Array[PackedScene]([ExtResource("2_u0d0w"), ExtResource("3_djs5a")])

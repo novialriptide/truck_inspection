@@ -12,7 +12,6 @@ class_name Player extends CharacterBody3D
 @onready var headY = $CameraPivotY
 @onready var headX = $CameraPivotY/CameraPivotX
 @onready var raycast = $CameraPivotY/CameraPivotX/RayCast3D
-
 @onready var prompt_label = $IndicatorPrompt/HBoxContainer/Label
 
 func on_interact_look_at(interactable: Interactable):
